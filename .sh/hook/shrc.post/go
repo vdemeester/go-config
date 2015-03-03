@@ -1,0 +1,10 @@
+# Filename:     .sh/hook/shrc.post/go
+# Author:       Vincent Demeester
+# License:      This file is licensed under the GPL v2
+# --------------------------------------------------------------------------- #
+# Configuration for go
+# --------------------------------------------------------------------------- #
+export GOPATH=$HOME/lib/go
+export PATH=$PATH:$GOPATH/bin
+test -d $GOPATH || mkdir -p $GOPATH
+# vim:filetype=sh foldmethod=marker autoindent expandtab shiftwidth=4

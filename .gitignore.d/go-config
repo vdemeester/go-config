@@ -2,3 +2,4 @@
 !.sh
 !.sh/hook
 !.sh/hook/shrc.post
+!.sh/hook/shrc.post/go
