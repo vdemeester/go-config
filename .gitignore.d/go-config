@@ -1,0 +1,4 @@
+*
+!.sh
+!.sh/hook
+!.sh/hook/shrc.post
