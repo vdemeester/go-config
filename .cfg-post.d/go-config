@@ -1,0 +1,7 @@
+#!/bin/bash
+
+echo "> Install/Update go packages"
+go get -u github.com/dougm/goflymake
+go get -u code.google.com/p/rog-go/exp/cmd/godef
+go get -u github.com/nsf/gocode
+go get -u github.com/kisielk/errcheck

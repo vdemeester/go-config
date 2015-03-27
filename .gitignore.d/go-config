@@ -3,3 +3,5 @@
 !.sh/hook
 !.sh/hook/shrc.post
 !.sh/hook/shrc.post/go
+!.cfg-post.d
+!.cfg-post.d/go-config
