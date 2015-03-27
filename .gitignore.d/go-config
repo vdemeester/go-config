@@ -5,3 +5,7 @@
 !.sh/hook/shrc.post/go
 !.cfg-post.d
 !.cfg-post.d/go-config
+!.config
+!.config/mr
+!.config/mr/config.d
+!.config/mr/config.d/go.vcsh
