@@ -9,3 +9,6 @@
 !.config/mr
 !.config/mr/config.d
 !.config/mr/config.d/go.vcsh
+!.emacs.d
+!.emacs.d/provided
+!.emacs.d/provided/go-config.org
