@@ -1,0 +1,18 @@
+#!/bin/sh
+# Script to "hack" on docker — It will :
+# - Assume we are on a docker folder and go to the git root
+# - Detect if its on a branch
+# - Build the image according to the branch and Dockerfile
+# - Run a container based on the image with the correct stuff mounted in volumes
+
+# fail in case of errors
+set -e
+
+cd `git root`
+
+GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+DOCKER_IMAGE="docker:$GIT_BRANCH"
+
+docker build -t $DOCKER_IMAGE .
+
+docker run --privileged --rm -ti -v `pwd`:/go/src/github.com/docker/docker $DOCKER_IMAGE /bin/bash

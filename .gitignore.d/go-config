@@ -1,4 +1,6 @@
 *
+!bin
+!bin/hack-on-docker
 !.sh
 !.sh/hook
 !.sh/hook/shrc.post
