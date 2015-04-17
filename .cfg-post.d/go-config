@@ -11,3 +11,4 @@ go get -u code.google.com/p/go.tools/cmd/benchcmp
 go get -u code.google.com/p/go.tools/cmd/callgraph
 go get -u golang.org/x/tools/cmd/goimports
 go get -u github.com/jstemmer/gotags
+go get -u github.com/motemen/gore
