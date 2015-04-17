@@ -42,3 +42,11 @@
                 "go build -v && go test -v && go vet")))
      (add-hook 'go-mode-hook 'my-go-mode-hook)
    #+END_SRC
+
+   Add a REPL mode with =gore=.
+
+   #+BEGIN_SRC emacs-lisp
+     (use-package gore-mode
+       :ensure t
+       :commands run-gore gore-mode)
+   #+END_SRC
