@@ -13,6 +13,33 @@ cd `git root`
 GIT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
 DOCKER_IMAGE="docker:$GIT_BRANCH"
 
-docker build -t $DOCKER_IMAGE .
+# The idea is to run goconvey in it (with other things)
+# Command is :
+# goconvey -depth=2 -host="$(ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)"
 
-docker run --privileged --rm -ti -v `pwd`:/go/src/github.com/docker/docker $DOCKER_IMAGE /bin/bash
+cat > custom.entrypoint.sh <<EOF
+#!/bin/sh
+go get github.com/smartystreets/goconvey
+goconvey -depth=2 -host="$(ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)" > /tmp/goconvey.logs 2>&1 &
+exec bash
+EOF
+
+cat > custom.Dockerfile <<EOF
+FROM $DOCKER_IMAGE
+MAINTAINER Vincent Demeester <vincent@sbr.pm>
+
+RUN go get github.com/smartystreets/goconvey
+COPY custom.entrypoint.sh /custom.entrypoint.sh
+RUN chmod +x /custom.entrypoint.sh
+
+ENTRYPOINT ["/custom.entrypoint.sh"]
+EOF
+
+docker build -t $DOCKER_IMAGE .
+docker build -f custom.Dockerfile -t "custom${DOCKER_IMAGE}" .
+
+
+docker run --privileged --rm -ti \
+       -v `pwd`:/go/src/github.com/docker/docker \
+       -p 8080:8080 \
+       "custom${DOCKER_IMAGE}"
