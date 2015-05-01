@@ -15,3 +15,4 @@ go get -u github.com/jstemmer/gotags
 go get -u github.com/motemen/gore
 go get -u github.com/k0kubun/pp
 go get -u github.com/smartystreets/goconvey
+go get -u github.com/tools/godep
