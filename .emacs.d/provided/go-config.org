@@ -20,7 +20,8 @@
      (use-package go-autocomplete
        :ensure t)
      (use-package go-eldoc
-       :ensure t)
+       :ensure t
+       :config (add-hook 'go-mode-hook 'go-eldoc-setup))
      ;; I have to test this more before doing anything
      ;;(use-package go-projectile
      ;;  :ensure t)
