@@ -1,4 +1,4 @@
-* Go configuration
+* Go configuration 🐹
 
    Let's install go-mode and configure it.
 
