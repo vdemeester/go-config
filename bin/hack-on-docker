@@ -5,8 +5,16 @@
 # - Build the image according to the branch and Dockerfile
 # - Run a container based on the image with the correct stuff mounted in volumes
 
+# TODO:
+# - Support docker options (same as the make|hack.sh commands +shell)
+# - Pass the env' variables (TESTFLAGS & co)
+# - Add some options (like binary+server start in debug mode)
+# - Rewrite it in go ? :P
+
 # fail in case of errors
 set -e
+
+
 
 cd `git root`
 
