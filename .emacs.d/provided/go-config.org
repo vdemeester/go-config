@@ -17,7 +17,7 @@
    And install stuffs, like autocomplete, documentation, errorcheck, tests.
 
    #+BEGIN_SRC emacs-lisp
-     (use-package go-autocomplete
+     (use-package company-go
        :ensure t)
      (use-package go-eldoc
        :ensure t
