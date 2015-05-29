@@ -18,7 +18,8 @@
 
    #+BEGIN_SRC emacs-lisp
      (use-package company-go
-       :ensure t)
+       :ensure t
+       :config (add-to-list 'company-backends 'company-go))
      (use-package go-eldoc
        :ensure t
        :config (add-hook 'go-mode-hook 'go-eldoc-setup))
