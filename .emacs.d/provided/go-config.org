@@ -11,7 +11,9 @@
               ("C-c m" . go-test-current-file)
               ("C-c ." . go-test-current-test)
               ("C-c b" . go-run)
-              ("C-h f" . godoc-at-point)))
+              ("C-h f" . godoc-at-point)
+              ("C-c C-r" . go-remove-unused-imports)
+              ("C-c C-i" . go-goto-imports)))
    #+END_SRC
 
    And install stuffs, like autocomplete, documentation, errorcheck, tests.
@@ -38,6 +40,7 @@
    #+BEGIN_SRC emacs-lisp
      (defun my-go-mode-hook ()
        ;; (setq gofmt-command "goimports")
+       ;; (setq gofmt-command "gofmt -s")
        (add-hook 'before-save-hook 'gofmt-before-save)
        (if (not (string-match "go" compile-command))
            (set (make-local-variable 'compile-command)
