@@ -25,9 +25,6 @@
      (use-package go-eldoc
        :ensure t
        :config (add-hook 'go-mode-hook 'go-eldoc-setup))
-     ;; I have to test this more before doing anything
-     ;;(use-package go-projectile
-     ;;  :ensure t)
      (use-package go-errcheck
        :ensure t)
      (use-package gotest
@@ -39,7 +36,6 @@
 
    #+BEGIN_SRC emacs-lisp
      (defun my-go-mode-hook ()
-       ;; (setq gofmt-command "goimports")
        ;; (setq gofmt-command "gofmt -s")
        (add-hook 'before-save-hook 'gofmt-before-save)
        (if (not (string-match "go" compile-command))
