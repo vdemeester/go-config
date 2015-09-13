@@ -17,3 +17,5 @@ go get -u github.com/k0kubun/pp
 go get -u github.com/smartystreets/goconvey
 go get -u github.com/tools/godep
 go get -u github.com/constabulary/gb/...
+go get -u github.com/alecthomas/gometalinter
+gometalinter --install --update
