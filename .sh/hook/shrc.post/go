@@ -7,4 +7,6 @@
 export GOPATH=$HOME/lib/go
 export PATH=$PATH:$GOPATH/bin
 test -d $GOPATH || mkdir -p $GOPATH
+# GO 1.5 experimental vendor all the way xD
+export GO15VENDOREXPERIMENT=1
 # vim:filetype=sh foldmethod=marker autoindent expandtab shiftwidth=4

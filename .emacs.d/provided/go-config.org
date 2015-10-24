@@ -5,6 +5,7 @@
 
    #+BEGIN_SRC emacs-lisp
      (exec-path-from-shell-copy-env "GOPATH")
+     (exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")
      (use-package go-mode
        :ensure t
        :bind (("C-c C-g a" . go-test-current-project)
