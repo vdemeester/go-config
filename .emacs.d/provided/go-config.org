@@ -39,7 +39,7 @@
 
    #+BEGIN_SRC emacs-lisp
      (defun my-go-mode-hook ()
-       ;; (setq gofmt-command "gofmt -s")
+       (setq gofmt-command "gofmt -s -w")
        (add-hook 'before-save-hook 'gofmt-before-save)
        (if (not (string-match "go" compile-command))
            (set (make-local-variable 'compile-command)
@@ -47,10 +47,3 @@
      (add-hook 'go-mode-hook 'my-go-mode-hook)
    #+END_SRC
 
-   Add a REPL mode with =gore=.
-
-   #+BEGIN_SRC emacs-lisp
-     (use-package gore-mode
-       :ensure t
-       :commands run-gore gore-mode)
-   #+END_SRC
