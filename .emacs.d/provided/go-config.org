@@ -39,7 +39,7 @@
 
    #+BEGIN_SRC emacs-lisp
      (defun my-go-mode-hook ()
-       (setq gofmt-command "gofmt -s -w")
+       ;; (setq gofmt-command "gofmt -s -w")
        (add-hook 'before-save-hook 'gofmt-before-save)
        (if (not (string-match "go" compile-command))
            (set (make-local-variable 'compile-command)
