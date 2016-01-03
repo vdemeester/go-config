@@ -8,13 +8,10 @@
      (exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")
      (use-package go-mode
        :ensure t
-       :bind (("C-c C-g a" . go-test-current-project)
-              ("C-c m" . go-test-current-file)
-              ("C-c ." . go-test-current-test)
-              ("C-c b" . go-run)
-              ("C-h f" . godoc-at-point)
-              ("C-c C-r" . go-remove-unused-imports)
-              ("C-c C-i" . go-goto-imports)))
+       :init
+       (bind-key "C-h f" 'godoc-at-point go-mode-map)
+       (bind-key "C-c C-r" 'go-remove-unused-imports go-mode-map)
+       (bind-key "C-c C-i" 'go-godoc-history go-mode-map))
    #+END_SRC
 
    And install stuffs, like autocomplete, documentation, errorcheck, tests.
@@ -29,7 +26,15 @@
      (use-package go-errcheck
        :ensure t)
      (use-package gotest
-       :ensure t)
+       :ensure t
+       :init
+       (bind-key "C-c r" 'go-run go-mode-map)
+       (bind-key "C-c t C-g a" 'go-test-current-project go-mode-map)
+       (bind-key "C-c t m" 'go-test-current-file go-mode-map)
+       (bind-key "C-c t ." 'go-test-current-test go-mode-map)
+       (bind-key "C-c t c" 'go-test-current-coverage go-mode-map)
+       (bind-key "C-c t b" 'go-test-current-benchmark go-mode-map)
+       (bind-key "C-c t C-g b" 'go-test-current-project-benchmarks go-mode-map))
      (use-package golint
        :ensure t)
    #+END_SRC
