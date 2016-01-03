@@ -4,6 +4,9 @@
 # --------------------------------------------------------------------------- #
 # Configuration for go
 # --------------------------------------------------------------------------- #
+
+echo "hello"
+
 export GOPATH=$HOME/lib/go
 export PATH=$PATH:$GOPATH/bin
 test -d $GOPATH || mkdir -p $GOPATH

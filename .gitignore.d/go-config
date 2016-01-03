@@ -15,5 +15,5 @@
 !/README.md
 !/.sh
 !/.sh/hook
-!/.sh/hook/shrc.post
-!/.sh/hook/shrc.post/go
+!/.sh/hook/shprofile.post
+!/.sh/hook/shprofile.post/go
