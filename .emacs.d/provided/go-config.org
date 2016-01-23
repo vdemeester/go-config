@@ -46,7 +46,7 @@
      (defun my-go-mode-hook ()
        (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
        (add-hook 'go-mode-hook 'go-oracle-mode)
-       (setq gofmt-command "gofmt -s")
+       (setq gofmt-command "gofmts")
        (add-hook 'before-save-hook 'gofmt-before-save)
        (if (not (string-match "go" compile-command))
            (set (make-local-variable 'compile-command)
