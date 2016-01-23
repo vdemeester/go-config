@@ -44,7 +44,9 @@
 
    #+BEGIN_SRC emacs-lisp
      (defun my-go-mode-hook ()
-       ;; (setq gofmt-command "gofmt -s -w")
+       (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
+       (add-hook 'go-mode-hook 'go-oracle-mode)
+       (setq gofmt-command "gofmt -s")
        (add-hook 'before-save-hook 'gofmt-before-save)
        (if (not (string-match "go" compile-command))
            (set (make-local-variable 'compile-command)
