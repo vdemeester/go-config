@@ -29,6 +29,11 @@ fixups = hub fetch docker
 checkout = git clone git@github.com:vdemeester/go-ipfs
 fixups = hub fetch ipfs
 
+# rancher
+[github.com/rancher/rancher-compose]
+checkout = git clone git@github.com:vdemeester/rancher-compose
+fixups = hub fetch rancher
+
 # runcom
 [github.com/runcom/skopeo]
 checkout = git clone git@github.com:vdemeester/skopeo
