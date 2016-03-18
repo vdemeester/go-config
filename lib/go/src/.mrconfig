@@ -1,7 +1,7 @@
-# emilevauge
-[github.com/emilevauge/traefik]
+# containous
+[github.com/containous/traefik]
 checkout = git clone git@github.com:vdemeester/traefik
-fixups = hub fetch emilevauge
+fixups = hub fetch containous
 
 # docker
 [github.com/docker/docker]
