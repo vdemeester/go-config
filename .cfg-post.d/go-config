@@ -20,4 +20,5 @@ go get -u github.com/smartystreets/goconvey
 go get -u github.com/Masterminds/glide
 go get -u github.com/constabulary/gb/...
 go get -u github.com/alecthomas/gometalinter
+go get -u github.com/msoap/go-carpet
 gometalinter --install --update
