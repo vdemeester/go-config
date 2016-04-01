@@ -37,7 +37,12 @@
        (bind-key "C-c t C-g b" 'go-test-current-project-benchmarks go-mode-map))
      (use-package golint
        :ensure t)
-   #+END_SRC
+     (use-package flycheck-gometalinter
+       :ensure t
+       :config
+       (progn
+         (flycheck-gometalinter-setup)))
+#+END_SRC
 
    Setup the go-mode hook to activate =gofmt= on save, oracle-mode and
    co.
