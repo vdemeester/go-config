@@ -59,3 +59,24 @@
      (add-hook 'go-mode-hook 'my-go-mode-hook)
    #+END_SRC
 
+
+   Let's also define some hooks that can be registered as =save-hook=
+   or =local-write-files-hooks= for example.
+
+
+   #+BEGIN_SRC emacs-lisp
+     (defun vde/go-test-save-function ()
+       "A file save hook that will run go test on the current package
+     whenever a file is saved. Use it with local variables and go-mode
+     for example."
+       (interactive)
+       (go-test-current-project))
+   #+END_SRC
+
+   It's really easy to use : just put the following in a
+   =.dir-locals.el= in =$GOPATH/src/= and magics happens.
+
+
+   #+BEGIN_SRC emacs-lisp :tangle no
+     ((go-mode . ((eval . (add-hook 'write-file-functions 'vde/go-test-save-function)))))
+   #+END_SRC
