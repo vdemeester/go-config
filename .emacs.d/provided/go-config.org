@@ -65,11 +65,10 @@
 
 
    #+BEGIN_SRC emacs-lisp
-     (defun vde/go-test-save-function ()
+     (defun vde/go-test-after-save-hook ()
        "A file save hook that will run go test on the current package
      whenever a file is saved. Use it with local variables and go-mode
      for example."
-       (interactive)
        (go-test-current-project))
    #+END_SRC
 
@@ -78,5 +77,5 @@
 
 
    #+BEGIN_SRC emacs-lisp :tangle no
-     ((go-mode . ((eval . (add-hook 'write-file-functions 'vde/go-test-save-function)))))
+     ((go-mode . ((eval . (add-hook 'after-save-hook 'vde/go-test-after-save-hook nil t)))))
    #+END_SRC
