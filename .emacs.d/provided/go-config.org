@@ -69,7 +69,9 @@
        "A file save hook that will run go test on the current package
      whenever a file is saved. Use it with local variables and go-mode
      for example."
-       (go-test-current-project))
+       (unless (ignore-errors (go-test-current-test))
+         (unless (ignore-errors (go-test-current-file))
+           (go-test-current-project))))
    #+END_SRC
 
    It's really easy to use : just put the following in a
