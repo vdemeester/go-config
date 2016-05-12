@@ -23,8 +23,6 @@
      (use-package go-eldoc
        :ensure t
        :config (add-hook 'go-mode-hook 'go-eldoc-setup))
-     (use-package go-errcheck
-       :ensure t)
      (use-package gotest
        :ensure t
        :init
@@ -37,11 +35,11 @@
        (bind-key "C-c t C-g b" 'go-test-current-project-benchmarks go-mode-map))
      (use-package golint
        :ensure t)
-     (use-package flycheck-gometalinter
-       :ensure t
-       :config
-       (progn
-         (flycheck-gometalinter-setup)))
+     ;;(use-package flycheck-gometalinter
+     ;;  :ensure t
+     ;;  :config
+     ;;  (progn
+     ;;    (flycheck-gometalinter-setup)))
 #+END_SRC
 
    Setup the go-mode hook to activate =gofmt= on save, oracle-mode and
