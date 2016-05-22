@@ -24,11 +24,6 @@ fixups = hub fetch docker
 checkout = git clone git@github.com:vdemeester/libcompose
 fixups = hub fetch docker
 
-# ipfs
-[github.com/ipfs/go-ipfs]
-checkout = git clone git@github.com:vdemeester/go-ipfs
-fixups = hub fetch ipfs
-
 # rancher
 [github.com/rancher/rancher-compose]
 checkout = git clone git@github.com:vdemeester/rancher-compose
