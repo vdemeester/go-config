@@ -42,13 +42,11 @@
      ;;    (flycheck-gometalinter-setup)))
 #+END_SRC
 
-   Setup the go-mode hook to activate =gofmt= on save, oracle-mode and
+   Setup the go-mode hook to activate =gofmt= on save and co.
    co.
 
    #+BEGIN_SRC emacs-lisp
      (defun my-go-mode-hook ()
-       (load-file "$GOPATH/src/golang.org/x/tools/cmd/oracle/oracle.el")
-       (add-hook 'go-mode-hook 'go-oracle-mode)
        (setq gofmt-command "gofmts")
        (add-hook 'before-save-hook 'gofmt-before-save)
        (if (not (string-match "go" compile-command))
