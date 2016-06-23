@@ -10,7 +10,7 @@
        :ensure t
        :config
        (bind-key "C-h f" 'godoc-at-point go-mode-map)
-       (bind-key "C-c C-r" 'go-remove-unused-imports go-mode-map)
+       (bind-key "C-c C-u" 'go-remove-unused-imports go-mode-map)
        (bind-key "C-c C-i" 'go-godoc-history go-mode-map))
    #+END_SRC
 
