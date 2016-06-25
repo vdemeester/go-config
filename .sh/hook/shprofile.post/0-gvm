@@ -1,0 +1,7 @@
+# Filename:     .sh/hook/shrc.post/gvm
+# Author:       Vincent Demeester
+# License:      This file is licensed under the GPL v2
+# --------------------------------------------------------------------------- #
+# This file sources gvm :D
+# --------------------------------------------------------------------------- #
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
