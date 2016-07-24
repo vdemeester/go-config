@@ -35,11 +35,13 @@
        (bind-key "C-c t C-g b" 'go-test-current-project-benchmarks go-mode-map))
      (use-package golint
        :ensure t)
-     ;;(use-package flycheck-gometalinter
-     ;;  :ensure t
-     ;;  :config
-     ;;  (progn
-     ;;    (flycheck-gometalinter-setup)))
+     (use-package go-guru
+       :load-path "~/lib/go/src/golang.org/x/tools/cmd/guru"
+       :config
+       (add-hook 'go-mode-hook #'go-guru-hl-identifier-mode))
+     (use-package go-rename
+       :bind ("C-c r" . go-rename)
+       :load-path "~/lib/go/src/golang.org/x/tools/refactor/rename")
 #+END_SRC
 
    Setup the go-mode hook to activate =gofmt= on save and co.
@@ -72,7 +74,6 @@
 
    It's really easy to use : just put the following in a
    =.dir-locals.el= in =$GOPATH/src/= and magics happens.
-
 
    #+BEGIN_SRC emacs-lisp :tangle no
      ((go-mode . ((eval . (add-hook 'after-save-hook 'vde/go-test-after-save-hook nil t)))))
