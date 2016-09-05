@@ -1,7 +1,6 @@
 * Go configuration 🐹
 
-   Let's install go-mode and configure it.
-
+Let's install go-mode and configure it.
 
    #+BEGIN_SRC emacs-lisp
      (exec-path-from-shell-copy-env "GOPATH")
@@ -78,3 +77,17 @@
    #+BEGIN_SRC emacs-lisp :tangle no
      ((go-mode . ((eval . (add-hook 'after-save-hook 'vde/go-test-after-save-hook nil t)))))
    #+END_SRC
+
+* Automatically invoke tangle on save
+
+This is the magic line(s) to make the tangle on save automatic.
+
+#+BEGIN_SRC emacs-lisp :tangle no
+# Local Variables:
+# eval: (when (fboundp #'tangle-if-config) (add-hook 'after-save-hook #'tangle-if-config))
+# End:
+#+END_SRC
+
+# Local Variables:
+# eval: (when (fboundp #'tangle-if-config) (add-hook 'after-save-hook #'tangle-if-config))
+# End:
