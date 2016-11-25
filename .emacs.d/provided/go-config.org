@@ -3,8 +3,9 @@
 Let's install go-mode and configure it.
 
    #+BEGIN_SRC emacs-lisp
-     (exec-path-from-shell-copy-env "GOPATH")
-     (exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")
+     ;;(exec-path-from-shell-copy-env "GOPATH")
+     ;;(exec-path-from-shell-copy-env "GO15VENDOREXPERIMENT")
+     (setenv "GOPATH" "/home/vincent/go")
      (use-package go-mode
        :ensure t
        :config
