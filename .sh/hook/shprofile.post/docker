@@ -1,8 +1,0 @@
-# Filename:     .sh/hook/shrc.post/go
-# Author:       Vincent Demeester
-# License:      This file is licensed under the GPL v2
-# --------------------------------------------------------------------------- #
-# Configuration for go
-# --------------------------------------------------------------------------- #
-#export DOCKER_INCREMENTAL_BINARY=1
-# vim:filetype=sh foldmethod=marker autoindent expandtab shiftwidth=4
