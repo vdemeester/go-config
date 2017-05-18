@@ -3,8 +3,8 @@ let
 in
 { pkgs ? import (_pkgs.fetchFromGitHub { owner = "NixOS";
                                          repo = "nixpkgs-channels";
-                                         rev = "0afb6d789c8bf74825e8cdf6a5d3b9ab8bde4f2d";
-                                         sha256 = "147vhzrnwcy0v77kgbap31698qbda8rn09n5fnjp740svmkjpaiz";
+                                         rev = "685bfcee633774d730cd3da2fba6eb39a1b767b9";
+                                         sha256 = "19dkf81z8hradbqa7asi89f9wzr02iygk4sr3zj3k94f8lg1q3za";
                                        }) {}
 }:
 
