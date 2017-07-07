@@ -21,5 +21,6 @@ pkgs.stdenv.mkDerivation rec {
 		pkgs.gotools
 		pkgs.golint
 		pkgs.godef
+		pkgs.gocode
 	];
 }
