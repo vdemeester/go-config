@@ -22,5 +22,6 @@ pkgs.stdenv.mkDerivation rec {
 		pkgs.golint
 		pkgs.godef
 		pkgs.gocode
+		pkgs.protobuf3_0
 	];
 }
