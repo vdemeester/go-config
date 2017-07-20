@@ -5,7 +5,6 @@
 # Configuration for go
 # --------------------------------------------------------------------------- #
 
-export GOPATH=$HOME/go
+export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
-test -d $GOPATH || mkdir -p $GOPATH
 # vim:filetype=sh foldmethod=marker autoindent expandtab shiftwidth=4
